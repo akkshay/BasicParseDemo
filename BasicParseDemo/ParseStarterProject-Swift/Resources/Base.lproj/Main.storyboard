@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cNp-7W-ksr">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="je2-Cb-W3n">
+                                <rect key="frame" x="116" y="349" width="89" height="30"/>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uc8-Pq-n89"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q98-Pf-ej1">
+                                <rect key="frame" x="122" y="406" width="77" height="30"/>
+                                <state key="normal" title="Post Image"/>
+                                <connections>
+                                    <action selector="postImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sik-9s-MoK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lhK-AE-E65">
+                                <rect key="frame" x="40" y="104" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="gnq-13-XVm"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lhK-AE-E65" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="6mO-2P-Fz1"/>
+                            <constraint firstItem="lhK-AE-E65" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="84" id="8lE-Pq-a0d"/>
+                            <constraint firstItem="je2-Cb-W3n" firstAttribute="centerX" secondItem="lhK-AE-E65" secondAttribute="centerX" id="Ubi-rN-9TM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Q98-Pf-ej1" secondAttribute="bottom" constant="132" id="c87-5l-hkd"/>
+                            <constraint firstItem="Q98-Pf-ej1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nJM-G1-BER"/>
+                            <constraint firstItem="Q98-Pf-ej1" firstAttribute="centerX" secondItem="je2-Cb-W3n" secondAttribute="centerX" id="uFU-mg-d5E"/>
+                            <constraint firstItem="Q98-Pf-ej1" firstAttribute="top" secondItem="je2-Cb-W3n" secondAttribute="bottom" constant="27" id="w50-eY-vOS"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageView" destination="lhK-AE-E65" id="ghy-Pq-OcG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="27" y="358"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZcL-5Y-kLs">
+            <objects>
+                <navigationController id="cNp-7W-ksr" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h5Q-TR-izF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3St-sM-hwZ" kind="relationship" relationship="rootViewController" id="zUo-uF-nl2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6HT-FS-Kpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="345"/>
+        </scene>
+        <!--Images-->
+        <scene sceneID="c6p-0t-r7Y">
+            <objects>
+                <tableViewController id="3St-sM-hwZ" customClass="ImagesTableViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="WkC-XK-B7s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="130" id="rEF-NQ-atr" customClass="ImageTableViewCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="130"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rEF-NQ-atr" id="a6D-rg-n70">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6h-Ey-avf">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="U6h-Ey-avf" firstAttribute="centerY" secondItem="a6D-rg-n70" secondAttribute="centerY" id="33N-7L-dc2"/>
+                                        <constraint firstItem="U6h-Ey-avf" firstAttribute="leading" secondItem="a6D-rg-n70" secondAttribute="leading" id="4dO-Af-MQv"/>
+                                        <constraint firstAttribute="trailing" secondItem="U6h-Ey-avf" secondAttribute="trailing" id="Pmi-Xi-sAM"/>
+                                        <constraint firstItem="U6h-Ey-avf" firstAttribute="top" secondItem="a6D-rg-n70" secondAttribute="top" id="VzK-MW-kyA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="parseImageView" destination="U6h-Ey-avf" id="Qmp-EB-FJ1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3St-sM-hwZ" id="F1L-81-RX4"/>
+                            <outlet property="delegate" destination="3St-sM-hwZ" id="aJy-jc-cQG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Images" id="SG6-TX-fG3"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfK-bw-0vH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="345"/>
+        </scene>
+    </scenes>
+</document>
